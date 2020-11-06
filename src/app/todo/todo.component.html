@@ -1,0 +1,15 @@
+<div class="container">
+    <h1 class="title">Angular ToDo</h1>
+    <img class="logo" src="../../assets/angular.png" alt="" srcset="">
+    <div class="input-form">
+        <mat-form-field  appearance="outline">
+            <mat-label>I will...</mat-label>
+            <input id="todo-input" (keydown.enter)="addToTodoList()" [(ngModel)]="todoItem.title"  matInput placeholder="Go Shopping">
+            <mat-icon (click)="addToTodoList()" matSuffix>send</mat-icon>
+            <mat-hint>Type a ToDo Item...</mat-hint>
+        </mat-form-field>
+    </div>
+    <div *ngFor="let item of todoItems">
+        <h2 class="todo-items">{{item.title}} <mat-icon class="delete-icon" (click)="removeFromToDoList(item.id)" matSuffix>delete</mat-icon></h2>
+    </div>
+</div>
